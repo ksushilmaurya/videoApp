@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">  
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/welcome.css?v=<?=urlencode($version)?>" type="text/css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <title>GospelCaster - Streaming Without Borders</title>
+</head>
+<body ng-app="myApp" ng-controller="mainController">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="mainController.js"></script>
+<script src="components/home/home.js"></script>
+<script src="components/favorites/favorites.js"></script>
+<script src="service.js"></script>
+
+<div class="top-header">
+        <div class="logo">
+            <img src="../images/logo.png" alt="" class="logo1">
+            <img src="../images/logo2.png" alt="" class="logo2">
+        </div>  
+        <div class="navsec">
+        <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+    	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		
+	</div>
+	<a class="signin" href="#" data-toggle="modal" data-target="#signin">Login</a>
+	<a class="signin" href="#" data-toggle="modal" data-target="#signup">Sign Up</a>
+    
+  </nav>
+        </div>  
+    </div>
+
+<div id="container1">
+    <div class="captionheader">
+        <h2> Streaming Without Borders </h2>
+        <p>Watch Christian TV channels, movies, music, anytime, anywhere.</p>
+        <button class="btn">Sign Up Now</button>
+    </div>
+<div class="bottomlogo">
+	<h3>GospelCaster integrated with</h3>
+	<ul>
+		<li><img src="../images/logo12.png" alt="" style="height:30px"></li>
+		<li><img src="../images/logo13.png" alt="" style="height:25px"></li>
+		<li><img src="../images/logo4.png" alt="" style="height:30px"></li>
+		<li><img src="../images/logo5.png" alt="" style="height:35px"></li>
+		<li><img src="../images/logo6.png" alt="" style="height:36px"></li>
+		<li><img src="../images/logo7.png" alt="" style="height:30px"></li>
+		<li><img src="../images/logo8.png" alt="" style="height:40px"></li>
+		<li><img src="../images/logo9.png" alt="" style="height:30px"></li>
+		<li><img src="../images/logo10.png" alt="" style="height:35px"></li>
+		<li><img src="../images/logo14.png" alt="" style="height:30px"></li>
+		<li><img src="../images/logo15.png" alt="" style="height:30px"></li>
+		<li><img src="../images/logo16.png" alt="" style="height:30px"></li>
+		<li><img src="../images/logo11.png" alt="" style="height:30px"></li>
+	</ul>
+</div>
+
+	
+
+</div>
+
+<div class="m-app-sec">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-5"><img src="../images/mobile-app.png" alt="" class="img-responsive"></div>
+			<div class="col-sm-6 col-sm-offset-1">
+				<h3>Android and linux set-top boxes.</h3>
+				<p>Connect your GospelCaster account with our awesome community developed apps. Check in from the movie theater or when you're watching live TV. Get your calendars at a glance. See what's trending and popular. Manage your TV & movie lists.</p>
+				<ul>
+					<li><img src="../images/logo14-b.png" alt="" style="height:30px"></li>
+					<li><img src="../images/logo15.png" alt="" style="height:30px"></li>
+					<li><img src="../images/logo16.png" alt="" style="height:30px"></li>
+					<li><img src="../images/logo11.png" alt="" style="height:30px"></li>		
+				</ul>
+				<a class="btn" href="#">View apps</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="signup">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Please Provide Deatails for Signup</h3>
+        </div>
+        <!-- body -->
+        <div class="modal-header">
+          <form role="form">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model = "user.username" placeholder="Enter Username"/>
+              <input type="password" class="form-control" ng-model= "user.password" placeholder="Enter Password" />
+              <input type="password" class="form-control" ng-model= "user.rePassword" placeholder="Renter Password" />
+            </div>
+          </form>
+        </div>
+        <!-- footer -->
+        <div class="modal-footer">
+          <button class="btn btn-primary btn-block" ng-click="signUp()">Sign Up</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="modal fade" id="signin">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Login</h3>
+        </div>
+        <!-- body -->
+        <div class="modal-header">
+          <form role="form">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Username"/>
+              <input type="password" class="form-control" placeholder="Password" />
+            </div>
+          </form>
+        </div>
+        <!-- footer -->
+        <div class="modal-footer">
+          <button class="btn btn-primary btn-block">Log In</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+<footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4>About</h4>
+                    <ul>
+                        <li> <a href="#"> GospelCaster </a></li>
+                        <li> <a href="#"> Meet Our Team </a></li>
+                        <li> <a href="#"> Careers </a></li>
+                        <li> <a href="#"> Blog </a></li>
+                        <li> <a href="#"> Contact </a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li> <a href="#">TV Channel</a></li>
+                        <li> <a href="#"> IPTV/OTT-business </a></li>
+                        <li> <a href="#"> WebTV </a></li>
+                        <li> <a href="#"> Online Radio </a></li>
+                      
+                        <li> <a href="#"> Web Development </a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h4>Discover</h4>
+                    <ul>
+                        <li> <a href="#"> Products</a></li>
+                    </ul>
+                    
+                   
+                    <h4>Resellers</h4>
+                    <ul>
+                        <li> <a href="#"> Find a Reseller </a> </li>
+                        <li> <a href="#"> Become a Reseller </a> </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h4>Sales & Support</h4>
+                    <ul>
+                        <li> <a href="#"> Get Help – 7 days a week </a></li>
+                        <li> <a href="#"> Contact Us </a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>copyright 2019 GospelCaster, All Rights Reserved </p>
+                </div>
+            </div>
+        </div>
+</footer>
+
+<!-- jQuery -->
+
+
+<!-- Bootstrap Core JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+
+<script>
+    $(window).scroll(function() {
+    if ($(this).scrollTop() > 1){  
+        $('.top-header').addClass("sticky");
+    }
+    else{
+        $('.top-header').removeClass("sticky");
+    }
+});
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(".dropdown").hover(            
+            function() {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+                $(this).toggleClass('open');        
+            },
+            function() {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+                $(this).toggleClass('open');       
+            }
+        );
+    });
+</script>
+
+</body>
+</html>
+
